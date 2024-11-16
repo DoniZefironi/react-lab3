@@ -1,12 +1,12 @@
 import React from 'react';
-import { Container, Row, Col, Button, Card } from 'react-bootstrap';
+import { Container, Row, Col, Badge, Card, ListGroup } from 'react-bootstrap';
 
 const FiveComponents = () => {
     return (
         <Container>
             <Row className="my-4">
                 <Col md={4}>
-                    <Button variant="primary" className="mb-3">Button 1</Button>
+                    <Badge bg="primary" className="mb-3">Badge 1</Badge>
                 </Col>
                 <Col md={4}>
                     <Card style={{ width: '100%' }} className="mb-3">
@@ -34,7 +34,11 @@ const FiveComponents = () => {
                     </Card>
                 </Col>
                 <Col md={4}>
-                    <Button variant="secondary" className="mb-3">Button 2</Button>
+                    <ListGroup className="mb-3">
+                        <ListGroup.Item variant="secondary">List Item 1</ListGroup.Item>
+                        <ListGroup.Item variant="secondary">List Item 2</ListGroup.Item>
+                        <ListGroup.Item variant="secondary">List Item 3</ListGroup.Item>
+                    </ListGroup>
                 </Col>
                 <Col md={4}>
                     <Card style={{ width: '100%' }} className="mb-3">
