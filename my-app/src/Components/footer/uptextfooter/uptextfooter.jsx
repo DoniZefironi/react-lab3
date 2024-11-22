@@ -1,6 +1,6 @@
 import React from 'react';
 import './uptextfooter.css';
-
+import { useTranslation } from 'react-i18next';
 export default function uptextfooter(){
     return (
 <div className="uptextfooter">

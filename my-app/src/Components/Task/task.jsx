@@ -1,6 +1,6 @@
 import React from 'react';
 import { ProgressBar } from 'react-bootstrap';
-
+import { useTranslation } from 'react-i18next';
 function CompanyGoal() {
   const goalCompletion = 75; 
 

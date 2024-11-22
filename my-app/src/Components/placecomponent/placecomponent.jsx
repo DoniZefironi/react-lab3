@@ -2,7 +2,7 @@ import React from 'react';
 import './placecomponent.css';
 import Message from '../message/message';
 import CompanyGoal from '../Task/task';
-
+import { useTranslation } from 'react-i18next';
 export default function PlaceComponent({ organization }){
     return (
       <div className="place" id="place">

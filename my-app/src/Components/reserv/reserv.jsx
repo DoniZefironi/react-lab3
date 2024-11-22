@@ -1,7 +1,7 @@
 import React from 'react';
 import './reserv.css';
 import Modal from '../Modal/modal';
-
+import { useTranslation } from 'react-i18next';
 export default function Reserv() {
   return (
     <>

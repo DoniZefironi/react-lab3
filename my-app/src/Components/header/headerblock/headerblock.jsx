@@ -4,7 +4,7 @@ import './headerblock.css';
 import ButtonBoost from "../../buttoboost/buttonboost"
 import ButtonGroup from '../../buttoboost/groupbutton';
 import Danger from '../../buttoboost/danger';
-
+import { useTranslation } from 'react-i18next';
 export default function HeaderBlock(){
   return (
     <div className="header-block1" id="headerBlock">

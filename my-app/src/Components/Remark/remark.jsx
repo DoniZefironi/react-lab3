@@ -1,6 +1,6 @@
 import React from 'react';
 import { Toast} from 'react-bootstrap';
-
+import { useTranslation } from 'react-i18next';
 function ReviewsSection() {
   const reviews = [
     { id: 1, name: "Алексей", review: "Отличная картошка! Качество на высшем уровне, буду рекомендовать друзьям!" },

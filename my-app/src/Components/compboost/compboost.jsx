@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Badge, Card, ListGroup } from 'react-bootstrap';
-
+import { useTranslation } from 'react-i18next';
 const FiveComponents = () => {
     return (
         <Container>

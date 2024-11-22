@@ -1,6 +1,6 @@
 import React from 'react';
 import './downtextfooter.css';
-
+import { useTranslation } from 'react-i18next';
 export default function DownFooter(){
     return (
         <div className="downfooter">

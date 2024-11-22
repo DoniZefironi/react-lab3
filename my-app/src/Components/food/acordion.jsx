@@ -1,6 +1,6 @@
 import React from 'react';
 import './food.css';
-
+import { useTranslation } from 'react-i18next';
 export default function Acord() {
   return (
     <div className="accordion" id="accordionExample">

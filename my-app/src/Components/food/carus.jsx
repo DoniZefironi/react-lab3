@@ -1,7 +1,7 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
 import ocean from '../image/12possnacks.png';
-
+import { useTranslation } from 'react-i18next';
 export default function Carus() {
     return (
         <Carousel>

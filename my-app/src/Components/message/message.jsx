@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { Toast } from 'react-bootstrap';
-
+import { useTranslation } from 'react-i18next';
 export default function Message() {
     const [showToast, setShowToast] = useState(false);
 
