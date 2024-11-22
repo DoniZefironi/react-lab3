@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addUser, updateUser, removeUser, setError } from '../../redux/userslice';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Импортируем стили Bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css'; 
 
 const UserComponent = () => {
   const users = useSelector(state => state.user.users);
