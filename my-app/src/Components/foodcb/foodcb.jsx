@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addFurniture, updateFurniture, removeFurniture, setError } from '../../redux/taskslice';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Импортируем стили Bootstrap
+import { addfood, updatefood, removefood, setError } from '../../redux/taskslice';
+import 'bootstrap/dist/css/bootstrap.min.css'; 
 
-const FurnitureComponent = () => {
+const FoodComponent = () => {
   const dispatch = useDispatch();
-  const furniture = useSelector(state => state.furniture.items);
-  const error = useSelector(state => state.furniture.error);
+  const food = useSelector(state => state.food.items);
+  const error = useSelector(state => state.food.error);
 
   const [newItem, setNewItem] = useState({ id: '', name: '' });
-  const [editItemId, setEditItemId] = useState(null); // ID редактируемого элемента
-  const [editName, setEditName] = useState(''); // Новое имя для редактируемого элемента
-  const [searchTerm, setSearchTerm] = useState(''); // Поле для поиска
-  const [isAscending, setIsAscending] = useState(true); // Поле для сортировки
+  const [editItemId, setEditItemId] = useState(null); 
+  const [editName, setEditName] = useState(''); 
+  const [searchTerm, setSearchTerm] = useState(''); 
+  const [isAscending, setIsAscending] = useState(true); 
 
   const handleAdd = () => {
     const itemId = Number(newItem.id);
@@ -22,7 +22,7 @@ const FurnitureComponent = () => {
       return;
     }
 
-    const idExists = furniture.some(item => item.id === itemId);
+    const idExists = food.some(item => item.id === itemId);
     if (idExists) {
       dispatch(setError('ID уже существует. Пожалуйста, введите уникальный ID.'));
       return;
@@ -33,7 +33,7 @@ const FurnitureComponent = () => {
       return;
     }
 
-    dispatch(addFurniture({ id: itemId, name: newItem.name }));
+    dispatch(addfood({ id: itemId, name: newItem.name }));
     setNewItem({ id: '', name: '' });
   };
 
@@ -48,21 +48,21 @@ const FurnitureComponent = () => {
       dispatch(setError('Название не может быть пустым.'));
       return;
     }
-    dispatch(updateFurniture({ id: editItemId, name: editName }));
+    dispatch(updatefood({ id: editItemId, name: editName }));
     setEditItemId(null);
   };
 
   const handleRemove = (itemId) => {
-    dispatch(removeFurniture(itemId));
+    dispatch(removefood(itemId));
   };
 
-  const filteredFurniture = furniture
+  const filteredfood = food
     .filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()))
     .sort((a, b) => isAscending ? a.id - b.id : b.id - a.id);
 
   return (
     <div className="container mt-5">
-      <h2>Управление мебелью</h2>
+      <h2>Управление блюдами</h2>
       {error && <p className="text-danger">{error}</p>}
 
       <div className="input-group mb-3">
@@ -80,7 +80,7 @@ const FurnitureComponent = () => {
           value={newItem.name}
           onChange={(e) => setNewItem({ ...newItem, name: e.target.value })}
         />
-        <button className="btn btn-primary" onClick={handleAdd}>Добавить мебель</button>
+        <button className="btn btn-primary" onClick={handleAdd}>Добавить блюдо</button>
       </div>
 
       <div className="input-group mb-3">
@@ -97,7 +97,7 @@ const FurnitureComponent = () => {
       </div>
 
       <ul className="list-group">
-        {filteredFurniture.map(item => (
+        {filteredfood.map(item => (
           <li key={item.id} className="list-group-item d-flex justify-content-between align-items-center">
             {editItemId === item.id ? (
               <>
@@ -126,4 +126,4 @@ const FurnitureComponent = () => {
   );
 };
 
-export default FurnitureComponent;
+export default FoodComponent;

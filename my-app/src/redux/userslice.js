@@ -16,7 +16,7 @@ const userSlice = createSlice({
       const { id, updates } = action.payload;
       const index = state.users.findIndex(user => user.id === id);
       if (index !== -1) {
-        state.users[index] = { ...state.users[index], ...updates }; // Обновляет только указанные поля
+        state.users[index] = { ...state.users[index], ...updates }; 
       } else {
         state.error = 'User not found';
       }

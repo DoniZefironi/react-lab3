@@ -5,22 +5,22 @@ const initialState = {
   error: null,
 };
 
-const furnitureSlice = createSlice({
-  name: 'furniture',
+const foodSlice = createSlice({
+  name: 'food',
   initialState,
   reducers: {
-    addFurniture(state, action) {
+    addfood(state, action) {
       state.items.push(action.payload);
     },
-    updateFurniture(state, action) {
+    updatefood(state, action) {
       const index = state.items.findIndex(item => item.id === action.payload.id);
       if (index !== -1) {
         state.items[index] = action.payload;
       } else {
-        state.error = 'Furniture item not found';
+        state.error = 'Food item not found';
       }
     },
-    removeFurniture(state, action) {
+    removefood(state, action) {
       state.items = state.items.filter(item => item.id !== action.payload);
     },
     setError(state, action) {
@@ -29,5 +29,5 @@ const furnitureSlice = createSlice({
   },
 });
 
-export const { addFurniture, updateFurniture, removeFurniture, setError } = furnitureSlice.actions;
-export default furnitureSlice.reducer;
+export const { addfood, updatefood, removefood, setError } = foodSlice.actions;
+export default foodSlice.reducer;
